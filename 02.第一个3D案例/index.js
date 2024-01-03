@@ -13,7 +13,7 @@ const material = new THREE.MeshBasicMaterial({
 
 // 根据几何体与材质创建一个网格模型
 const mesh = new THREE.Mesh(geometry, material);
-mesh.position(0, 20, 0);
+mesh.position.set(0, 20, 0);
 
 // 将物体添加到场景中
 scene.add(mesh);
