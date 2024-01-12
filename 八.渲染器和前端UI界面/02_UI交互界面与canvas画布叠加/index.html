@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">1</div>
+      <div class="right">
+        <div class="top">2</div>
+        <div id="red">红色</div>
+        <div id="green">绿色</div>
+        <div class="bottom" id="three"></div>
+      </div>
+    </div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../build/three.module.js",
+          "three/addons/": "../../examples/jsm/"
+        }
+      }
+    </script>
+
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+
+  .container .left {
+    width: 200px;
+    background-color: blue;
+  }
+
+  .container .right .top {
+    width: calc(100vw - 200px);
+    height: 100px;
+    background-color: red;
+  }
+
+  .container .right .bottom {
+    height: calc(100vh - 100px);
+    background-color: gray;
+    width: calc(100vw - 200px);
+  }
+
+  #red,
+  #green {
+    position: absolute;
+    color: #fff;
+    top: 75%;
+    width: 50px;
+    height: 30px;
+    background-color: brown;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  #red {
+    left: 50%;
+  }
+
+  #green {
+    left: 57%;
+  }
+</style>
